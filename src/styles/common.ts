@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body, #root { height: 100%; }
   body {
     margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
     color: ${colors.textPrimary};
     background: ${colors.surface};
     -webkit-font-smoothing: antialiased;
