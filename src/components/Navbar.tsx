@@ -7,9 +7,9 @@ const Navbar = () => {
       <Inner>
         <Brand>Chilofy</Brand>
         <Actions>
-          <Link href="#features">Features</Link>
+          {/* <Link href="#features">Features</Link>
           <Link href="#how">How it Works</Link>
-          <Link href="#community">Community</Link>
+          <Link href="#community">Community</Link> */}
           <Button>Get Started</Button>
         </Actions>
       </Inner>
@@ -47,11 +47,11 @@ const Actions = styled.nav`
   gap: 16px;
 `
 
-const Link = styled.a`
-  color: ${colors.textSecondary};
-  font-weight: 500;
-  &:hover { color: ${colors.textPrimary}; }
-`
+// const Link = styled.a`
+//   color: ${colors.textSecondary};
+//   font-weight: 500;
+//   &:hover { color: ${colors.textPrimary}; }
+// `
 
 const Button = styled.a`
   background: ${colors.brand};
@@ -61,4 +61,4 @@ const Button = styled.a`
   font-weight: 600;
 `
 
-export default Navbar
+export default Navbar;
