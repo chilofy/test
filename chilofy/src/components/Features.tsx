@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { container, section, colors, card, media } from '../styles/common'
+import { container, section, colors, card, media, pastelTile } from '../styles/common'
 
 const FEATURES = [
   { title: 'Smart Matching', desc: 'Our AI-powered algorithm connects you with people who share your interests, values, and vibe for meaningful interactions.' },
@@ -19,8 +19,8 @@ const Features = () => {
           <p>Chilofy brings together the best features of social networking and dating apps to create authentic connections.</p>
         </Head>
         <Grid>
-          {FEATURES.map((f) => (
-            <Card key={f.title}>
+          {FEATURES.map((f, i) => (
+            <Card key={f.title} $i={i}>
               <Icon />
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
@@ -43,7 +43,7 @@ const Inner = styled.div`
 
 const Head = styled.div`
   max-width: 760px;
-  margin: 0 auto 32px;
+  margin: 0 auto 40px;
   color: ${colors.textSecondary};
   h2 { color: ${colors.textPrimary}; margin: 0 0 8px; }
 `
@@ -60,12 +60,24 @@ const Grid = styled.div`
   }
 `
 
-const Card = styled.div`
+const Card = styled.div<{ $i: number }>`
   ${card};
   padding: 20px;
   text-align: left;
   h3 { margin: 8px 0; font-size: 18px; }
   p { color: ${colors.textSecondary}; }
+  ${pastelTile};
+  background: ${(p) => {
+    const tints = [
+      'linear-gradient(180deg, rgba(109,93,246,0.08), #fff)',
+      'linear-gradient(180deg, rgba(90,200,250,0.08), #fff)',
+      'linear-gradient(180deg, rgba(255,116,198,0.08), #fff)',
+      'linear-gradient(180deg, rgba(56,189,248,0.08), #fff)',
+      'linear-gradient(180deg, rgba(251,146,60,0.08), #fff)',
+      'linear-gradient(180deg, rgba(99,102,241,0.08), #fff)'
+    ];
+    return tints[p.$i % tints.length]
+  }};
 `
 
 const Icon = styled.div`

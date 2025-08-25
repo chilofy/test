@@ -42,9 +42,9 @@ export const container = css`
 `
 
 export const section = css`
-  padding: 72px 0;
+  padding: 90px 0;
   @media ${media.md} {
-    padding: 56px 0;
+    padding: 64px 0;
   }
 `
 
@@ -56,9 +56,13 @@ export const card = css`
 `
 
 export const gradientBg = css`
-  background: radial-gradient(1200px 600px at -10% -30%, rgba(109, 93, 246, 0.18), transparent 60%),
-    radial-gradient(1200px 600px at 110% -30%, rgba(255, 116, 198, 0.18), transparent 60%),
-    radial-gradient(1200px 600px at 50% 120%, rgba(90, 200, 250, 0.18), transparent 60%);
+  background: radial-gradient(1200px 600px at -10% -30%, rgba(109, 93, 246, 0.14), transparent 60%),
+    radial-gradient(1200px 600px at 110% -30%, rgba(255, 116, 198, 0.16), transparent 60%),
+    radial-gradient(1200px 600px at 50% 120%, rgba(90, 200, 250, 0.12), transparent 60%);
+`
+
+export const pastelTile = css`
+  background: linear-gradient(180deg, rgba(109,93,246,0.08), rgba(255,255,255,1));
 `
 
 export const GlobalStyle = createGlobalStyle`
@@ -72,13 +76,16 @@ export const GlobalStyle = createGlobalStyle`
   html, body, #root { height: 100%; }
   body {
     margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
     color: ${colors.textPrimary};
     background: ${colors.surface};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  h1, h2, h3 { letter-spacing: -0.02em; }
+  h1 { font-weight: 800; }
+  h2 { font-weight: 800; font-size: 28px; }
   img { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
-  button { font: inherit; }
+  button { font: inherit; cursor: pointer; }
 `

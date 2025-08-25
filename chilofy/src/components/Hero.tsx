@@ -4,6 +4,8 @@ import { container, section, colors, card } from '../styles/common'
 const Hero = () => {
   return (
     <Wrap>
+      <Decor1 />
+      <Decor2 />
       <Inner>
         <Left>
           <Eyebrow>Find Your</Eyebrow>
@@ -45,6 +47,20 @@ const Hero = () => {
 
 const Wrap = styled.section`
   ${section};
+  position: relative;
+  overflow: hidden;
+`
+
+const Decor1 = styled.div`
+  position: absolute; width: 280px; height: 280px; top: -80px; right: -80px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,116,198,0.25), transparent 60%);
+  filter: blur(8px);
+`
+
+const Decor2 = styled.div`
+  position: absolute; width: 300px; height: 300px; left: -120px; bottom: -80px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(90,200,250,0.25), transparent 60%);
+  filter: blur(10px);
 `
 
 const Inner = styled.div`
@@ -67,12 +83,12 @@ const Eyebrow = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 8px 0 16px;
-  font-size: 48px;
-  line-height: 1.1;
+  margin: 10px 0 14px;
+  font-size: 56px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   @media (max-width: 768px) {
-    font-size: 38px;
+    font-size: 42px;
   }
 `
 
@@ -91,7 +107,7 @@ const Subtitle = styled.p`
 const Ctas = styled.div`
   display: flex;
   gap: 12px;
-  margin: 20px 0 10px;
+  margin: 24px 0 10px;
 `
 
 const Primary = styled.a`
@@ -100,6 +116,7 @@ const Primary = styled.a`
   padding: 12px 16px;
   border-radius: 12px;
   font-weight: 700;
+  box-shadow: 0 8px 20px rgba(109, 93, 246, 0.3);
 `
 
 const Ghost = styled.a`
@@ -133,7 +150,7 @@ const Right = styled.div`
 
 const Mock = styled.div`
   ${card};
-  width: 320px;
+  width: 340px;
   border-radius: 18px;
   padding: 16px;
 `
@@ -150,9 +167,9 @@ const CardBody = styled.div`
 `
 
 const Bubble = styled.div`
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #5ac8fa, #6d5df6);
 `
 

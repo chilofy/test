@@ -45,7 +45,7 @@ const Inner = styled.div`
 const Feed = styled.div`
   ${card};
   padding: 18px;
-  background: white;
+  background: linear-gradient(180deg, rgba(109,93,246,0.05), #fff);
 `
 
 const Post = styled.div`

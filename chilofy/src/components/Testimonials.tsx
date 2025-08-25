@@ -33,8 +33,8 @@ const Testimonials = () => {
           ))}
         </Grid>
         <Kpis>
-          {KPIS.map((k) => (
-            <KpiCard key={k.label}>
+          {KPIS.map((k, i) => (
+            <KpiCard key={k.label} $i={i}>
               <KpiValue>{k.value}</KpiValue>
               <KpiLabel>{k.label}</KpiLabel>
             </KpiCard>
@@ -56,7 +56,7 @@ const Inner = styled.div`
 
 const Head = styled.div`
   max-width: 700px;
-  margin: 0 auto 24px;
+  margin: 0 auto 28px;
   color: ${colors.textSecondary};
   h2 { color: ${colors.textPrimary}; margin: 0 0 6px; }
 `
@@ -72,6 +72,7 @@ const Card = styled.div`
   ${card};
   padding: 18px;
   text-align: left;
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(109,93,246,0.02));
 `
 
 const Avatar = styled.div`
@@ -95,8 +96,17 @@ const Kpis = styled.div`
   @media ${media.md} { grid-template-columns: repeat(2, 1fr); }
 `
 
-const KpiCard = styled.div`
+const KpiCard = styled.div<{ $i: number }>`
   ${card}; padding: 16px; text-align: center;
+  background: ${(p) => {
+    const t = [
+      'linear-gradient(180deg, rgba(56,189,248,0.08), #fff)',
+      'linear-gradient(180deg, rgba(129,140,248,0.08), #fff)',
+      'linear-gradient(180deg, rgba(251,146,60,0.08), #fff)',
+      'linear-gradient(180deg, rgba(244,114,182,0.08), #fff)'
+    ]
+    return t[p.$i % t.length]
+  }};
 `
 
 const KpiValue = styled.div`

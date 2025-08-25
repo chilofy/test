@@ -76,7 +76,7 @@ const Steps = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   @media ${media.md} {
     grid-template-columns: 1fr;
   }
@@ -88,10 +88,11 @@ const Step = styled.div`
   padding: 18px;
   h3 { margin: 8px 0; }
   p { color: ${colors.textSecondary}; }
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(109,93,246,0.02));
 `
 
 const Badge = styled.div`
-  width: 28px; height: 28px; border-radius: 10px; display: grid; place-items: center; font-weight: 800; color: white; background: ${colors.brand};
+  width: 32px; height: 32px; border-radius: 12px; display: grid; place-items: center; font-weight: 800; color: white; background: ${colors.brand};
 `
 
 const Demo = styled.div`

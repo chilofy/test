@@ -17,8 +17,8 @@ const Discover = () => {
           <p>Join vibrant communities based on your interests and connect with people who share your passions.</p>
         </Head>
         <Grid>
-          {COMMUNITIES.map((c) => (
-            <Card key={c.title}>
+          {COMMUNITIES.map((c, i) => (
+            <Card key={c.title} $i={i}>
               <Badge />
               <h3>{c.title}</h3>
               <p>{c.desc}</p>
@@ -53,10 +53,19 @@ const Grid = styled.div`
   @media ${media.md} { grid-template-columns: 1fr; }
 `
 
-const Card = styled.div`
+const Card = styled.div<{ $i: number }>`
   ${card}; padding: 18px; text-align: left;
   h3 { margin: 8px 0; }
   p { color: ${colors.textSecondary}; }
+  background: ${(p) => {
+    const tints = [
+      'linear-gradient(180deg, rgba(56,189,248,0.08), #fff)',
+      'linear-gradient(180deg, rgba(244,114,182,0.08), #fff)',
+      'linear-gradient(180deg, rgba(251,146,60,0.08), #fff)',
+      'linear-gradient(180deg, rgba(129,140,248,0.08), #fff)'
+    ]
+    return tints[p.$i % tints.length]
+  }};
 `
 
 const Badge = styled.div`
